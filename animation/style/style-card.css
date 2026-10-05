@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700&display=swap');
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+:root{
+    --clr-dark:rgb(13, 17, 19);
+    --clr-light:rgb(255, 255, 255);
+    --clr-accent:rgb(222, 52, 0);
+    --clr-accent-dark:rgb(163, 38,0);
+    --clr-secondary:rgb(0, 62,163);
+
+}
+
+body {
+
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--clr-dark);
+    /* background-color: rgb(94, 94, 94); */
+    color: var(--clr-light);
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+/* img {
+    max-width: 100%;
+} */
+.rank {
+    position: absolute;
+    top: 0;
+    right: 1em;
+
+    font-weight: bold;
+    font-size: 1.125rem;
+    background-color: rgba(206, 206, 206, 0.5);
+    padding: 0.5rem;
+    font-family: sans-serif;
+    clip-path: polygon(100% 0%, 100% 100%, 50% 70%, 0 100%, 0% 50%, 0 0);
+}
+
+
+.game {
+    position: relative;
+    /* height: calc(300px + 40px); */
+    height: calc(300px);
+    width: 207px;
+    /* background-color: blue; */
+    /* border: 2px solid var(--clr-accent); */
+}
+
+.front {
+    transition: transform 0.15s;
+    
+    background-color: rgb(73, 73, 73);
+    position: relative;
+}
+
+/* Img */
+.front .thumbnail {
+    /* fill the width of the container `game` and fit the height */
+    width: 100%;
+    height: auto;
+    
+ 
+}
+/* Title and Stats */
+.front .name-stats {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    /* height: 100%; */
+    display: grid;
+    place-items: center;
+    
+    padding: 0.2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: saturate(150%) blur(20px);
+    backdrop-filter: saturate(150%) blur(20px);
+}
+/* 1. Title */
+.front .name-stats  .name {
+    margin: 0.75rem 0;
+    font-weight: 500;
+    font-size: 16px;
+}
+/* 2. Stats */
+.front .name-stats  .stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 2px solid var(--clr-dark); */
+}
+/* 2.1 viewers */
+.front .name-stats  .stats .viewers {
+    font-weight: 200;
+
+}
+/* 2.2 Streamers */
+.front .name-stats .stats .streamers{
+    display: flex;
+    /* background-color:red; */
+}
+.front .name-stats .stats .streamers img {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;   
+    border: 2px solid var(--clr-dark);
+    /* background-color: aqua; */
+}
+
+.front .name-stats .stats .streamers img:nth-of-type(1) {
+    transform: translateX(50%);
+    /* margin-left: 1em; */
+}
+.front .name-stats .stats .streamers img:nth-of-type(2) {
+    transform: translateX(25%);
+    /* margin-left: 1em; */
+}
+
+
+
+.back {
+    display: none;
+}
+/* 38 */
+.background {
+    background-color: #234;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -8;
+    transform: scale(0.2, 0.9);
+    opacity: 0;
+    /* transition: transform 0.15s, opacity 0.15s; */
+    /* width: 100px; */
+}
+.game:hover .background {
+    transform: scale(1.25, 1.2);
+    opacity: 1;
+    transition: transform 0.2s cubic-bezier(.21,1,.82,1), opacity linear;
+}
+
+.game:hover .front {
+    transform: translateY(-15%) scale(0.90);
+}
+.game:hover .stats {
+    display: none;
+}
+
+.game:hover .name {
+    animation: Center 250ms forwards;
+}
+
+/* Key Frame */
+@keyframes Center {
+    0% {
+        text-align: left;
+        opacity: 1;
+        color: #fff;
+    }
+    33.33% {
+        text-align: left;
+        opacity: 0;
+        color: #f0f0f0;
+    }
+    66.66% {
+        text-align: center;
+        opacity: 1;
+        color:#f0f0f0;;
+    }
+    100% {
+        text-align: center;
+        opacity: 1;
+        color: #234;
+    }
+}

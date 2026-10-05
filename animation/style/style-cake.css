@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+}
+
+.announcement-bar{
+    width: 100%;
+    min-height: 100px;
+    background-color: #eff5bd;
+    color: #414141;
+    font-size: 13.6px;
+    font-family: Century Gothic,sans-serif;
+    letter-spacing: 0em;
+    line-height: 1.8;
+}
+.announcement-text {
+    font-weight: 700;
+    display: block;
+    text-align: center;
+}
+
+.announcement-link-text {
+    display: block;  
+    text-align: center;
+}
